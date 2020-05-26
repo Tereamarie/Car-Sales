@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-import 'bulma/css/bulma.css';
-import './styles.scss';
+import "bulma/css/bulma.css";
+import "./styles.scss";
 
-import { creatStore} from 'redux';
-import { Provider } from 'react-redux';
-import { reducer } from './reducers/reducer';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { reducer } from "./reducers/reducer";
 
-const store = creatStore(reducer);
+const store = createStore(reducer);
 
-
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-   <Provider>
+  <Provider store={store}>
     <App />
-    </Provider>, 
-    rootElement
-    );
+  </Provider>,
+  rootElement
+);
